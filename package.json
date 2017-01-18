@@ -1,0 +1,53 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "An ES6 node starter project",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node --harmony .",
+    "dev": "NODE_ENV=development nodemon -x \"node --harmony\" .",
+    "purge": "rm -rf node_modules; rm -rf bin; npm cache clean; npm i",
+    "pretest": "npm run test:lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "./node_modules/.bin/jest --verbose",
+    "test:lint": "./node_modules/.bin/eslint . --color",
+    "test:watch": "./node_modules/.bin/jest --watchAll --verbose"
+  },
+  "author": "Clear Capital",
+  "license": "ISC",
+  "private": true,
+  "engines": {
+    "node": "6.3.1",
+    "npm": "3.10.7"
+  },
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "collectCoverage": true
+  },
+  "dependencies": {
+    "babel-core": "6.14.0",
+    "babel-eslint": "7.0.0",
+    "babel-plugin-transform-class-properties": "6.11.5",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-polyfill": "6.13.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-stage-1": "6.13.0",
+    "babel-register": "6.14.0",
+    "body-parser": "1.15.2",
+    "cookie-parser": "1.4.3",
+    "ejs": "2.5.2",
+    "express": "4.14.0",
+    "morgan": "1.7.0",
+    "node-fetch": "1.6.3"
+  },
+  "devDependencies": {
+    "babel-jest": "16.0.0",
+    "eslint": "3.12.0",
+    "eslint-config-standard": "6.0.0",
+    "jest": "18.1.0",
+    "jest-cli": "18.1.0",
+    "standard": "8.6.0"
+  }
+}
